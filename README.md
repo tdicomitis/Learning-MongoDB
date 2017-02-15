@@ -10,11 +10,13 @@
 
 __Relational DBs__
 
+Table driven, columns and rows, etc.
+
 Historically databases have been mostly relational or SQL databases.
 
 This means they store data in the format of tables and records.
 
-A table is how you desribe a piece of data, for example:
+A table is how you describe a piece of data, for example:
 
 | fName        | lName          | id  |
 | ------------- |:-------------:| -----:|
@@ -29,18 +31,22 @@ A specific row in the table is a record.
 
 ie { "Doug"      | "Walter" | 12e120  }
 
-Additionaly tables may have relationships, or ways of relating peices of data together. We will learn how to do this in another section of the course but to learn more about it please read the 'types of associations' section of [this guide](http://guides.rubyonrails.org/association_basics.html)
+Additionaly tables may have relationships, or ways of relating pieces of data together. We will learn how to do this in another section of the course but to learn more about it please read the 'types of associations' section of [this guide](http://guides.rubyonrails.org/association_basics.html)
 
 
 
-Relational databases also use Structured Query Language, which is a way of accessing, and updating our database. We will learn SQL in a couple of weeks
+Relational databases also use Structured Query Language, which is a way of accessing, and updating our database. We will learn SQL in a couple of weeks.
 
 
 ----
 
 __Non-Relational DBS__
 
-Non relational DBs are much less structured then Relational DBs. Instead of having tightly couple tables, we structure our data in 'JSON'
+Not using tables, using json and javascript notations. Known as a document.
+
+Non-Relational databases are very flexible, have extreme performance, very fast and scalability. This makes them easier and better to use that relational databases.
+
+Non relational DBs are much less structured then Relational DBs. Instead of having tightly couple tables, we structure our data in 'JSON'.
 
 Previously a specific data object was known as a `record`, in NR dbs a piece of data is a document:
 
@@ -59,11 +65,19 @@ var customer = {
 
  #### MongoDB
 
+Stores all of our stuff from json.
+
 Is a document driven database in which all of the data is stored in JSON format.
 
 Does not rely on table joins, therefor it is much more flexible.
 
+A bunch of documents is known as a collection.
+
+Store our collections in a database.
+
 Supports agile software development, scalability, and performance.
+
+Driver is what drives a behavior. In this example Mongoose is our driver.
 
 
 ----
@@ -78,7 +92,7 @@ MongoDB
 
 MongoShell
 
-Driver (handles communication to DB)
+Driver (handles communication to DB) - in our case the driver is Mongoose.
 
 
 ![alt text](http://i61.photobucket.com/albums/h79/bigskycodeacademy/unspecified_zpsduke3mnn.png "Logo Title Text 1")
@@ -94,6 +108,9 @@ Next create your directory
 
 ----
 #### JSON
+
+The ability to structure what a document looks like while working in javascript land.
+
 key values
   keys must be strings
   separated with colons
@@ -127,12 +144,14 @@ In this object we have several types of nesting to consider.
 }
 
 ```
-The flexiblity JSON offers allows us to design our data with complete flexibility.
+The flexibility JSON offers allows us to design our data with complete flexibility.
 
 For more information [json.org](http://json.org/)
 
 ----
 #### BSON
+
+BSON is a binary json that makes MongoDb fast.
 
 Mongo actually stores JSON in BSON, Binary JSON.
 
@@ -309,6 +328,6 @@ __Benefits__
 
 * Easier database transactions
 
-* Consistent database with schemas
+* Consistent database with schemas, meaning we do not need schemas
 
 * Fake relationships with population
